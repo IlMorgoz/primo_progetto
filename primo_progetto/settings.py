@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=%^oxk=zo(6^%wf6!0j*@k@=f#dgfaad%cx_+-sj9b3@ln4+q-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'prima_app',
+    'seconda_app',
 
 ]
 
@@ -58,7 +59,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'prima_app/templates/prima_app'),
-                 os.path.join(BASE_DIR, 'templates/')],
+                 os.path.join(BASE_DIR, 'templates/'),
+                 os.path.join(BASE_DIR, 'seconda_app/templates/seconda_app'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
