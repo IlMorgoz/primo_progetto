@@ -1,7 +1,7 @@
 {% extends "base.html"%}
 {%block title%} {{block.super}} Pari_Dispari {%endblock title%}
 {%block content%}
-<ul style="bullet:none"> 
+<ul> 
     {% for x in array %}
         {% if x|divisibleby:2 %}
             <li><span style="color:green">{{ x }}</span></li>
