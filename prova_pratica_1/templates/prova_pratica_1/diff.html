@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+{%block title%} {{block.super}}Differenza{%endblock title%}
+{%block content%}
+    {% if num1 > num2%}
+        <p>
+            Il numero <span style="color:red">{{num1}}</span> è maggiore di <span style="color:green">{{num2}}</span>
+            Differenza={{diff}}
+        </p>
+    {% elif num1 < num2%}
+        <p>
+            Il numero <span style="color:red">{{num2}}</span> è maggiore di <span style="color:green">{{num1}}</span>
+            Differenza={{diff}}
+        </p>
+    {% else%}
+        <p>
+            Il numero {{num1}} è uguale a {{num2}}
+            Differenza=0
+        </p>
+    {%endif%}
+{%endblock content%}
