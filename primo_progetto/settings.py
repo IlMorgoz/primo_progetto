@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'prima_app',
     'seconda_app',
+    'news'
 
 ]
 
@@ -60,7 +61,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'prima_app/templates/prima_app'),
                  os.path.join(BASE_DIR, 'templates/'),
-                 os.path.join(BASE_DIR, 'seconda_app/templates/seconda_app'),],
+                 os.path.join(BASE_DIR, 'seconda_app/templates/seconda_app'),
+                 os.path.join(BASE_DIR, 'news/templates/news'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
