@@ -32,3 +32,14 @@ def articoloDetailView(request, pk):
     articolo = get_object_or_404(Articolo, pk=pk)
     context = {"articolo": articolo}
     return render (request, "news/articolo_detail.html", context)
+
+def listaArticoli(request, pk=None):
+    if pk is None:
+        articoli = Articolo.objects.all()
+        valore_default = 0
+    else:
+        articoli = Articolo.objects.filter(giornalista_id=pk)
+        valore_default = 1
+    context = {'articoli': articoli,
+               'valore_default': valore_default,}
+    return render(request,'lista_articoli.html', context)
