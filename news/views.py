@@ -1,6 +1,5 @@
 import datetime
 from django.shortcuts import render, get_object_or_404
-from odf.draw import Object
 
 from.models import Articolo, Giornalista
 # Create your views here.
