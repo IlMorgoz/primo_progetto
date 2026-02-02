@@ -50,17 +50,11 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    News
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <ul style="list-style-type: none;">
-                            <li><a href="{% url 'news:home'%}">Homepage</a></li>
-                            <li><a href="{% url 'news:lista_articoli' 1%}">Read More</a></li> <!--1 è un numero a caso, future implementazioni di funzionalità necessarie-->
-                            <li><a href="{% url 'news:query_base'%}">Query</a></li>
-                        </ul>
-                    </div>
+                <li>
+                    <a class="nav-link" href="{% url 'news:index_news'%}">News</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </li>
             </ul>
         </div>
