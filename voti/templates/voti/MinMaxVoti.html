@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+    {% block title %}
+        Materie
+    {% endblock title %}
+    {% block content %}
+        <h2>Verifiche:</h2>
+        <h3>Risultati</h3>
+        <ul>
+            <li>Voto massimo: {{ risultati.0 }}</li>
+            <li>Materie con voto massimo:
+            {% for materia in risultati.1 %}
+                {{ materia }},
+            {% endfor %}</li>
+            <li>Studenti con voto massimo:
+            {% for studente in risultati.2 %}
+                {{ studente }},
+            {% endfor %}</li>
+            <li>Voto minimo: {{ risultati.3 }}</li>
+            <li>Materie con voto minimo:
+            {% for materia in risultati.4 %}
+                {{ materia }},
+            {% endfor %}</li>
+            <li>Studenti con voto minimo:
+            {% for studente in risultati.5 %}
+                {{ studente }},
+            {% endfor %}</li>
+        </ul>
+    {% endblock content %}

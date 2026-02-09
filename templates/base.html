@@ -56,6 +56,19 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Voti
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul style="list-style-type: none;">
+                            <li><a href="{% url 'voti:materie'%}">Materie</a></li>
+                            <li><a href="{% url 'voti:MaterieEAssenze'%}">Materie e assenze</a></li>
+                            <li><a href="{% url 'voti:MediaVoti'%}">Medie voti</a></li>
+                            <li><a href="{% url 'voti:min_max_voti'%}">Voti minimi e massimi</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
