@@ -3,19 +3,20 @@
 Esempio di query
 {%endblock title%}
 {%block content%}
-    {% for foo in risultati_no_ciclo.values %}
-        <p><strong>{{foo.0}}:</strong> {{foo.1}}</p>
-    {% endfor %}
-
-    {% for foo in risultati_ciclo.values %}
-        <p><strong>{{foo.0}}:</strong>
+    {% load giornalista_tags %}
+    {% for consegna in risultati_ciclo.values %}
+        <p><strong>{{consegna.0}}:</strong></p>
         <ul>
-            {% for foo2 in foo.1.values %}
-                {% for key,content in foo2.items %}
-                    <li><p><strong>{{key}}:</strong> {{content}}</p></li>
-                    {% if key == "visualizzazioni" or key == "anno_di_nascita"%}
-                        <br>
-                    {% endif %}
+            {% for dizionario in consegna.1.values %}
+                {% for key, content in dizionario.items %}
+                        {% if key == "giornalista_id" %}
+                            <li><p><strong>giornalista:</strong> {{ content|get_nome_giornalista }}</p></li>
+                        {% else %}
+                            <li><p><strong>{{ key }}</strong> {{ content }}</p></li>
+                        {% endif %}
+                        {% if key == "visualizzazioni" or key == "anno_di_nascita" %}
+                            <br>
+                        {% endif %}
                 {% endfor %}
             {% endfor %}
         </ul>

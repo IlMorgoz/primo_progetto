@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+    {% block title %}
+        Materie
+    {% endblock title %}
+    {% block content %}
+        <ul style="list-style-type: none;">
+            <li><a href="{% url 'voti:materie'%}">Materie</a></li>
+            <li><a href="{% url 'voti:MaterieEAssenze'%}">Materie e Assenze</a></li>
+            <li><a href="{% url 'voti:MediaVoti'%}">Media Voti</a></li>
+            <li><a href="{% url 'voti:min_max_voti'%}">Voti Massimi e Minimi</a></li>
+            <li><a href="/">Root</a></li>
+        </ul>
+    {% endblock content %}
