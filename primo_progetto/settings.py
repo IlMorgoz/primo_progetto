@@ -69,7 +69,7 @@ TEMPLATES = [
                  os.path.join(BASE_DIR, 'prova_pratica_1/templates/prova_pratica_1'),
                  os.path.join(BASE_DIR, 'news/templates/news'),
                  os.path.join(BASE_DIR, 'voti/templates/voti'),
-                 os.path.join(BASE_DIR, 'contatti/templates/contatti'),],
+                 os.path.join(BASE_DIR, 'contatti/templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,3 +137,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+LOGIN_REDIRECT_URL = '/'

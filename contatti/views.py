@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Contatto
 
 def index(request):
-    return render(request, 'index_contatti.html')
+    return render(request, 'contatti/index_contatti.html')
 def contatti(request):
 
     # Se la richiesta è di tipo POST, allora possiamo processare i dati
@@ -37,12 +37,12 @@ def contatti(request):
 
         # arriviamo a questo punto se si tratta della prima volta che la pagina viene richiesta(con metodo GET), o se il form non è valido e ha errori
         context = {"form": form}
-        return render(request, "contatto.html", context)
+        return render(request, "contatti/contatto.html", context)
 
 def lista_contatti(request):
     contatti = Contatto.objects.all()
     context = {"contatti": contatti,}
-    return render(request, 'lista_contatti.html', context)
+    return render(request, 'contatti/lista_contatti.html', context)
 
 @login_required(login_url="/accounts/login")
 def modifica_contatto(request, pk):
@@ -58,7 +58,7 @@ def modifica_contatto(request, pk):
             return redirect('forms_app:lista-contatti')  # url che reindirizza alla pagina lista_contatti.html
 
     context = {'form': form, 'contatto': contatto}
-    return render(request, 'modifica_contatto.html', context)
+    return render(request, 'contatti/modifica_contatto.html', context)
 
 #decoratore che permette di cancellare il contatto solo ad un utente admin
 @staff_member_required(login_url="/accounts/login")
@@ -68,4 +68,4 @@ def elimina_contatto(request, pk):
         contatto.delete() #elimina il contatto dal database
         return redirect('forms_app:lista-contatti')
     context= {'contatto': contatto}
-    return render(request, 'elimina_contatto.html', context)
+    return render(request, 'contatti/elimina_contatto.html', context)

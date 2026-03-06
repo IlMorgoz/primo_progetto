@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{%block title%} {{block.super}} Logout {%endblock title%}
+{% block content %}
+    {% csrf_token %}
+    <p>Logout effettuato</p>
+    <a href="{% url 'login'%}">Clicca qui per rieffettuare il login</a>
+{% endblock %}
