@@ -29,7 +29,7 @@ def contatti(request):
             print(nuovo_contatto.contenuto)
 
         # ringrazio l'utente per averci contattato - volendo possiamo effettuare un redirect a una pagina specifica
-            return HttpResponse("<h1>Grazie per averci contattato!</h1>")
+            return redirect('contatti:grazie')
 
     # Se la richiesta HTTP usa il metodo GET o qualsiasi altro metodo, allora creo il form di default vuoto
     else:
@@ -55,7 +55,7 @@ def modifica_contatto(request, pk):
         form = FormContatto(request.POST,instance=contatto)  # ora passo oltre al contatto prelevato dal db anche i dati modificati
         if form.is_valid():
             form.save()
-            return redirect('forms_app:lista-contatti')  # url che reindirizza alla pagina lista_contatti.html
+            return redirect('contatti:lista-contatti')  # url che reindirizza alla pagina lista_contatti.html
 
     context = {'form': form, 'contatto': contatto}
     return render(request, 'contatti/modifica_contatto.html', context)
@@ -66,6 +66,9 @@ def elimina_contatto(request, pk):
     contatto = get_object_or_404(Contatto, id=pk)
     if request.method == "POST": # vuol dire che l'utente ha inviato il form che conferma l'eliminazione
         contatto.delete() #elimina il contatto dal database
-        return redirect('forms_app:lista-contatti')
+        return redirect('contatti:lista_contatti')
     context= {'contatto': contatto}
     return render(request, 'contatti/elimina_contatto.html', context)
+
+def grazie(request):
+    return render(request, 'contatti/grazie.html')

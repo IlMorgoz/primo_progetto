@@ -27,4 +27,5 @@ urlpatterns = [
     path('voti/', include("voti.urls",namespace="voti")),
     path('contatti/', include("contatti.urls",namespace="contatti")),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
 ]

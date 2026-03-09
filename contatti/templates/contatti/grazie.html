@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block head_title %}{{ block.super }} | Grazie!{% endblock head_title %}
+{% block content %}
+    <h1>Grazie per averci contattato!</h1>
+    <h3><a href="{% url 'contatti:index' %}">Torna indietro</a></h3>
+{% endblock content %}
