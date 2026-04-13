@@ -92,6 +92,16 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    API
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul style="list-style-type: none;">
+                            <li><a href="{% url 'api:todos'%}">ToDos</a></li>
+                        </ul>
+                    </div>
+                </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -125,6 +135,7 @@
                 <li><a href="{% url 'news:index_news'%}">News</a></li>
                 <li><a href="{% url 'voti:index'%}">Voti</a></li>
                 <li><a href="{% url 'contatti:index'%}">Contatti</a></li>
+                <li><a href="{% url 'api:index'%}">Contatti</a></li>
                 <li><a href="/admin">Pannello admin</a></li>
             </ol>
         {%endblock content%}

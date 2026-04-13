@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'contatti',
     'crispy_forms',
     'crispy_bootstrap4',
-    'accounts'
+    'accounts',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,8 @@ TEMPLATES = [
                  os.path.join(BASE_DIR, 'prova_pratica_1/templates/prova_pratica_1'),
                  os.path.join(BASE_DIR, 'news/templates/news'),
                  os.path.join(BASE_DIR, 'voti/templates/voti'),
-                 os.path.join(BASE_DIR, 'contatti/templates'),],
+                 os.path.join(BASE_DIR, 'contatti/templates'),
+                 os.path.join(BASE_DIR, 'api/templates/api'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
