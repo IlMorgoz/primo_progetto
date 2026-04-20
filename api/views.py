@@ -2,7 +2,7 @@ from django.shortcuts import render
 import requests
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'api/index.html')
 def todos_view(request):
     # Effettua la richiesta HTTP
     try:
